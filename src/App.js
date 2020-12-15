@@ -10,7 +10,7 @@ import { HashRouter, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <HashRouter>
+    <HashRouter  basename={process.env.PUBLIC_URL}>
       <GlobalProvider>
       <Header />
       <div className="container">
