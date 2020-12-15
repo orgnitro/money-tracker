@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 50%;
+}
+
+body {
+  background: #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px 40px 2px 40px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+header {
+  background-color: #4da6ff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin: 0;
+  color: #fff;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3.5vw;
+  text-transform: uppercase;
+}
+
+.budget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+h2 {
+  letter-spacing: 1px;
+  margin: 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin: 40px 0 10px;
+}
+
+h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.inc-exp-balance {
+  display: flex;
+  flex-direction: row;
+  padding: 0 50px;
+}
+
+.inc-exp-balance > div {
+  flex-grow: 1;
+  margin-bottom: 5px;
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.plus {
+  color: #2ecc71;
+}
+
+.money.minus {
+  color: #c0392b;
+}
+
+.add-action {
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 15px;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.text-field {
+  width: 30%;
+}
+
+.amount-field {
+  width: 15%;
+  position: relative;
+}
+
+.amount-field p {
+  width: 100%;
+  position: absolute;
+  color: red;
+  display: none;
+  font-size: 0.7vw;
+  top: 88%;
+  left: 3%;
+}
+
+.date-field {
+  width: 30%;
+}
+
+.form-btn {
+  width: 10%;
+  height: 30px;
+}
+
+.add-action input {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  width: 100%;
+  height: 30px;
+  padding-left: 5px;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #4da6ff;
+  box-shadow: var(--box-shadow);
+  outline: none;
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #80bfff;
+}
+
+.btn-check {
+  display: none;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.item {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-right: 10px;
+  margin: 10px 18px 10px 0;
+  height: 40px;
+}
+
+.plus {
+  color: #087937;
+}
+
+.minus {
+  color: #c0392b;
+}
+
+.item input {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  height: 35px;
+  font-family: 'Lato', sans-serif; 
+  width: 100%;
+}
+
+.transaction-text {
+  width: 40%;
+  padding-left: 5px;
+}
+
+
+
+.transaction-amount {
+  width: 15%;
+}
+
+
+
+.transaction-date {
+  margin-right: 5px;
+  width: 30%;
+  text-align: end;
+}
+
+.transaction-date input {
+  text-align: end;
+}
+
+
+.delete-btn, .edit-btn {
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  padding: 2px;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  top: 1px;
+  left: 100%;
+}
+
+.delete-btn:hover {
+  background-color: #eb6e60;
+}
+
+.edit-btn {
+  background-color: #9c88ff;
+  top: 50%;
+  left: 100%;
+}
+
+.edit-btn:hover {
+  background-color: #aa99ff;
+}
+
+.toggled {
+  background-color: #27c712;
+}
+
+.toggled:hover {
+  background-color: #2ee916;
+}
+
+.material-icons {
+  font-size: 13px;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: #4da6ff;
+}
+
+.navbar a {
+  text-align: center;
+  text-decoration: none;
+  width: 50%;
+  color: #fff;
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+.navbar a:hover{
+  background-color: #80bfff;
+}
+
+.chartWrapper {
+  width: 100%;
+}
+
+
+@media screen and (max-width: 1240px) {
+  .item {
+  font-size: 1.2vw;
+  }
+
+  .date-field {
+    width: 35%;
+  }
+
+  .item input {
+    font-size: 1.2vw;
+  }
+
+}
+
+@media screen and (max-width: 1090px) {
+  .transaction-date {
+    text-align: -webkit-right;
+    width: 35%;
+  }
+
+  .transaction-date input {
+    text-align: end;
+    width: 100%;
+  }
+
+  .add-action input {
+    font-size: 1.3vw;
+  }
+
+  .add-action label {
+    font-size: 1.5vw;
+  }
+
+  .navbar {
+    font-size: 1.5vw;
+  }
+
+  .btn {
+    width: 80%;
+  }
+
+  .btn-add {
+    display: none;
+  }
+
+  .btn-check {
+    display: block;
+  }
+
+  .inc-exp-balance div, .money {
+    font-size: 1.5vw;
+  }
+
+  .inc-exp-balance h2 {
+    font-size: 2.5vw;
+  }
+}
+
+@media screen and (max-width: 965px) {
+  .inc-exp-balance {
+    padding: 0 30px
+  }
+
+  .text-field {
+    width: 30%;
+  }
+  
+  .amount-field {
+    position: relative;
+    width: 20%;
+  }
+
+  .date-field {
+    width: 40%;
+  }
+  
+  .form-btn {
+    text-align: center;
+    vertical-align: middle;
+    width: 10%;
+    height: 30px;
+  }
+}
