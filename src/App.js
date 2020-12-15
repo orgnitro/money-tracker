@@ -5,12 +5,12 @@ import { TransactionList } from './components/TransactionList';
 import { AddTransaction } from './components/AddTransaction';
 import { ChartComponent } from './components/Chart';
 import { GlobalProvider } from './context/GlobalState';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <GlobalProvider>
       <Header />
       <div className="container">
@@ -20,7 +20,7 @@ function App() {
         <Route path='/chart' component={ChartComponent} />
       </div>
       </GlobalProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
