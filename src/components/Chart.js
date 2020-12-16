@@ -17,7 +17,7 @@ export const ChartComponent = () => {
         labels: ['Jan', 'Feb', 'Mar', 
                  'Apr', 'May', 'Jun', 
                  'Jul', 'Aug', 'Sep', 
-                 'Oct', 'Nov', 'Feb'
+                 'Oct', 'Nov', 'Dec'
                 ],
         datasets: [{
           label: 'Income',
