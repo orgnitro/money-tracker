@@ -9,5 +9,7 @@ Allows to:
 Only build files in this repo.
 Readable code is here: https://github.com/orgnitro/different_works/tree/master/money-tracker
 
+You can run it here: https://orgnitro.github.io/money-tracker/
+
 
 
