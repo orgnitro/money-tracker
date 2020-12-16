@@ -2,20 +2,19 @@ import React, { createContext, useReducer, useEffect } from 'react';
 import AppReducer from './AppReducer';
 
 
-const initialState = {transactions: []}
+const transactionsFromStorage = localStorage.getItem('transactions');
+const initialState = {
+  transactions: transactionsFromStorage ? JSON.parse(transactionsFromStorage) : []
+};
 
 export const GlobalContext = createContext(initialState);
 
 export const GlobalProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(AppReducer, initialState, () => {
-    const json = localStorage.getItem('transactions');
-    const localData = JSON.parse(json) || [];
-    return localData;
-  });
+  const [state, dispatch] = useReducer(AppReducer, initialState);
   
   useEffect( () => {
-    localStorage.setItem('transactions', JSON.stringify(state))
-  }, [state]);
+    localStorage.setItem('transactions', JSON.stringify(state.transactions))
+  }, [state.transactions]);
   
   function delTransaction(id) {
     dispatch({
