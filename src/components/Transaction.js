@@ -5,6 +5,9 @@ import { GlobalContext } from '../context/GlobalState';
 export const Transaction = ({ transaction }) => {
   const { delTransaction, editTransaction } = useContext(GlobalContext);
   const sign = transaction.amount < 0 ? '-' : '+';
+  const currDt = new Date();
+  const minDate = `${currDt.getFullYear()}-01-01`;
+  const maxDate = `${currDt.getFullYear()}-${currDt.getMonth() + 1}-${currDt.getDate()}`;
 
   const editSelected = e => { 
     const li = e.target.closest('li');
@@ -19,7 +22,7 @@ export const Transaction = ({ transaction }) => {
 
       textField.innerHTML = `<input type="text" value="${textField.innerHTML}" />`;
       amountField.innerHTML = `<input type="text" value="${Number(amountField.innerHTML.replace('$', ''))}" />`;
-      dateField.innerHTML = `<input type="date" value="${dateField.innerHTML}" />`;
+      dateField.innerHTML = `<input type="date" min="${minDate}" max="${maxDate}" value="${dateField.innerHTML}" />`;
     } else {
       const textInput = textField.querySelector('input').value
       let amountInput = amountField.querySelector('input').value

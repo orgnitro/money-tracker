@@ -13,6 +13,10 @@ export const AddTransaction = () => {
   });
 
   const { addTransaction } = useContext(GlobalContext);
+  
+  const currDt = new Date();
+  const minDate = `${currDt.getFullYear()}-01-01`;
+  const maxDate = `${currDt.getFullYear()}-${currDt.getMonth() + 1}-${currDt.getDate()}`;
 
   const onSubmit = e => {
     e.preventDefault();
@@ -43,14 +47,16 @@ export const AddTransaction = () => {
           <label htmlFor="text">NAME</label>
           <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="Enter text..." />
         </div>
-        <div className="amount-field">
-          <label htmlFor="amount">AMOUNT</label>
-          <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
-          <p>Enter Amount</p>
-        </div>
-        <div className="date-field">
-          <label htmlFor="date">DATE</label>
-          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+        <div className="amount-date-wrapper">
+          <div className="amount-field">
+            <label htmlFor="amount">AMOUNT</label>
+            <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
+            <p>Amount</p>
+          </div>
+          <div className="date-field">
+            <label htmlFor="date">DATE</label>
+            <input type="date" value={date} min={minDate} max={maxDate} onChange={(e) => setDate(e.target.value)} />
+          </div>
         </div>
         <div className="form-btn">
         <button className="btn"><span className="btn-add">ADD</span><span className="btn-check">&#10003;</span></button>

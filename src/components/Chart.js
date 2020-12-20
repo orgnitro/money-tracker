@@ -11,7 +11,7 @@ export const ChartComponent = () => {
   annualIncomesExpenses(incomes, expenses, transactions);  
 
   return (
-   <div className="chartWrapper">
+   <div className="chart-wrapper">
     <Bar
       data = {{
         labels: ['Jan', 'Feb', 'Mar', 
@@ -32,10 +32,14 @@ export const ChartComponent = () => {
             data: expenses
           }
       ]}}
-      height={300}
-      width={600}
+      options = {{
+        maintainAspectRatio: false,
+        responsive: true
+        }}
+      // height={"20vw"}
+      // width={"100%"}
      />
-  </div>
+</div>
   )
 }
 
