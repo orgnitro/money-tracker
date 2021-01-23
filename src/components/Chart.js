@@ -36,8 +36,6 @@ export const ChartComponent = () => {
         maintainAspectRatio: false,
         responsive: true
         }}
-      // height={"20vw"}
-      // width={"100%"}
      />
 </div>
   )
