@@ -14,8 +14,9 @@ export const IncomeExpenses = () => {
 
   const expense = amounts
   .filter(amount => amount < 0)
-  .reduce(((acc, val) => acc += val), 0) * -1
-  .toFixed(2);
+  .reduce(((acc, val) => acc += val), 0)
+  .toFixed(2)
+  .replace('-', '');
 
 
   return (

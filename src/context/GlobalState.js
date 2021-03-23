@@ -2,9 +2,9 @@ import React, { createContext, useReducer, useEffect } from 'react';
 import AppReducer from './AppReducer';
 
 
-const transactionsFromStorage = localStorage.getItem('transactions');
+const cachedTransactions = localStorage.getItem('transactions');
 const initialState = {
-  transactions: transactionsFromStorage.length !== 2 ? JSON.parse(transactionsFromStorage) : [
+  transactions: cachedTransactions && cachedTransactions.length !== 2 ? JSON.parse(cachedTransactions) : [
     {id: "604f2aca-fddc-49ff-b5b7-c5b4aea6a17e", text: "Debt Repayment", amount: -200, date: "2021-03-19"},
     {id: "a1c4611d-abbc-427f-a992-1fa5b1bb8f25", text: "Income from cryptocurrency sale", amount: 400, date: "2021-03-15"},
     {id: "76c16353-f13e-4c1b-92cb-6fa5f3d8562d", text: "New Shoes", amount: -250, date: "2021-01-15"},
